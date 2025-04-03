@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Conductor Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <center>
+    <h1>Conductor Dashboard</h1>
+    <table border="6">
+        <tr>
+            <th>Route</th>
+            <th>Tickets Sold</th>
+        </tr>
+        {% for route, count in ticket_counts.items() %}
+        <tr>
+            <td>{{ route }}</td>
+            <td id="{{ route }}">{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>

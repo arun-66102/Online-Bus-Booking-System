@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bus Ticket Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bus Ticket Booking</h1>
+    <label>Select Source:</label>
+    <select id="source">
+        <option value="Stop_A">Stop A</option>
+        <option value="Stop_B">Stop B</option>
+        <option value="Stop_C">Stop C</option>
+    </select>
+
+    <label>Select Destination:</label>
+    <select id="destination">
+        <option value="Stop_B">Stop B</option>
+        <option value="Stop_C">Stop C</option>
+        <option value="Stop_D">Stop D</option>
+    </select>
+
+    <button onclick="generateQR()">Generate QR</button>
+    <h2>Scan QR Code to Pay</h2>
+    <img id="qrImage" alt="QR Code will appear here">
+    <h3 id="fare"></h3>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
